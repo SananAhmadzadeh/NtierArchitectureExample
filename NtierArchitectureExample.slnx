@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Core/Core.csproj" />
+  <Project Path="ExampleWebAPI/ExampleWebAPI.csproj" />
+  <Project Path="NtierArchitecture.Business/NtierArchitecture.Business.csproj" />
+  <Project Path="NtierArchitecture.DataAccess/NtierArchitecture.DataAccess.csproj" />
+  <Project Path="NtierArchitecture.Entities/NtierArchitecture.Entities.csproj" />
+</Solution>

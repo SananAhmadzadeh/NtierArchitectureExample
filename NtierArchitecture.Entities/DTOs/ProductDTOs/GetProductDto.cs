@@ -1,0 +1,7 @@
+﻿using Core.Entities.Abstract;
+using WebApiAdvanceExample.Entities.Enums;
+
+namespace WebApiAdvanceExample.Entities.DTOs.ProductDTOs
+{
+    public record GetProductDto(string Name, string? Description, decimal Price, decimal? DiscountPrice, ProductStatus? Status) : IDto;
+}

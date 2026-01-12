@@ -1,0 +1,9 @@
+﻿global using Core.Entities.Concrete.Auth;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using NtierArchitecture.Entities.Concrete;
+global using System.Reflection;
+global using Core.DataAccess.Repositories.Abstract;
+global using Core.DataAccess.Repositories.Concrete.EFCore;
+global using NtierArchitecture.DataAccess.EFCore;
+global using NtierArchitecture.DataAccess.Repositories.Abstract;
