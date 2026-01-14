@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NtierArchitecture.DataAccess.Repositories.Concrete.EFCore;
+using NtierArchitecture.DataAccess.UnitOfWork.Abstract;
 
 namespace NtierArchitecture.DataAccess
 {
@@ -15,10 +15,7 @@ namespace NtierArchitecture.DataAccess
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
                 });
 
-                services.AddScoped<ICategoryRepository, EfCategoryRepository>();
-                services.AddScoped<IProductRepository, EfProductRepository>();
-                services.AddScoped<IOrderRepository, EfOrderRepository>();
-                services.AddScoped<IOrderItemRepository, EfOrderItemRepository>();
+                services.AddScoped<IUnitOfWork, UnitOfWork.Concrete.UnitOfWork>();
 
                 return services;
             }   

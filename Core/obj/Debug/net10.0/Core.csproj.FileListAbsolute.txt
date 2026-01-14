@@ -11,3 +11,16 @@ C:\Users\geniu\Desktop\Asp.Net Core Exaple Projects\NtierArchitectureExample\Cor
 C:\Users\geniu\Desktop\Asp.Net Core Exaple Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\refint\Core.dll
 C:\Users\geniu\Desktop\Asp.Net Core Exaple Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.pdb
 C:\Users\geniu\Desktop\Asp.Net Core Exaple Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\ref\Core.dll
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\bin\Debug\net10.0\Core.deps.json
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\bin\Debug\net10.0\Core.dll
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\bin\Debug\net10.0\Core.pdb
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.csproj.AssemblyReference.cache
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.AssemblyInfoInputs.cache
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.AssemblyInfo.cs
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.sourcelink.json
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.dll
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\refint\Core.dll
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\Core.pdb
+C:\Users\geniu\Desktop\Asp.Net Core Example Projects\NtierArchitectureExample\Core\obj\Debug\net10.0\ref\Core.dll

@@ -1123,11 +1123,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\NtierArchitectureExample\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\NtierArchitectureExample\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\geniu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\NtierArchitectureExample\\Core\\obj\\",
+      "outputPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1191,7 +1191,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

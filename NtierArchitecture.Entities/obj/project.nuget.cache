@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ksCjsCQu2s=",
+  "dgSpecHash": "McDvXFqF+a4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\NtierArchitectureExample\\NtierArchitecture.Entities\\NtierArchitecture.Entities.csproj",
+  "projectFilePath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Entities\\NtierArchitecture.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\geniu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\geniu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

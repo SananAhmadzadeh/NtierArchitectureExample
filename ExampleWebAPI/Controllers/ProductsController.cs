@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NtierArchitecture.Business.Services.Abstract;
+using WebApiAdvanceExample.Entities.DTOs.ProductDTOs;
 
 namespace ExampleWebAPI.Controllers
 {
@@ -15,9 +15,29 @@ namespace ExampleWebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(_service.GetAllProductsAsync());
+            return Ok(await _service.GetAllProductsAsync());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProductById(Guid id)
+        {
+            return Ok(await _service.GetProductByIdAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProduct(CreateProductDto dto)
+        {
+            await _service.AddProductAsync(dto);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProduct(Guid id)
+        {
+            await _service.DeleteProductAsync(id);
+            return Ok();
         }
     }
 }

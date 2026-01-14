@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NtierArchitecture.Entities.Concrete;
+using NtierArchitecture.Entities.DTOs.ProductDTOs;
 using WebApiAdvanceExample.Entities.DTOs.ProductDTOs;
 
 namespace NtierArchitecture.Business.Utilities.Profiles
@@ -19,6 +20,7 @@ namespace NtierArchitecture.Business.Utilities.Profiles
                            opt => opt.MapFrom(_ => DateTime.UtcNow)).ReverseMap();
 
             CreateMap<Product, GetProductDto>();
+            CreateMap<Product, GetAllProductsDto>();
         }
     }
 }

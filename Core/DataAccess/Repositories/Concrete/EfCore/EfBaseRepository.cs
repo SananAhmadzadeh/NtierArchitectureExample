@@ -23,12 +23,9 @@ namespace Core.DataAccess.Repositories.Concrete.EFCore
             await _entities.AddAsync(entity);
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(TEntity entity)
         {
-            var category = await _entities.FindAsync(id);
-
-            if (category != null)
-                _entities.Remove(category);
+            _entities.Remove(entity);
         }
 
         public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? filter = null, params Expression<Func<TEntity, object>>[] includes)
