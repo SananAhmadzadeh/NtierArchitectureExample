@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D4CE7B0-4A74-56E2-4422-FD62B8DE5106}|NtierArchitecture.Entities\\NtierArchitecture.Entities.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\ntierarchitecture.entities\\concrete\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D4CE7B0-4A74-56E2-4422-FD62B8DE5106}|NtierArchitecture.Entities\\NtierArchitecture.Entities.csproj|solutionrelative:ntierarchitecture.entities\\concrete\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\examplewebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|solutionrelative:examplewebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Entities\\Concrete\\Product.cs",
-              "RelativeDocumentMoniker": "NtierArchitecture.Entities\\Concrete\\Product.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Entities\\Concrete\\Product.cs",
-              "RelativeToolTip": "NtierArchitecture.Entities\\Concrete\\Product.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAgAAAABAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "ExampleWebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Program.cs",
+              "RelativeToolTip": "ExampleWebAPI\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T12:34:17.745Z",
+              "WhenOpened": "2026-01-15T19:26:32.305Z",
               "EditorCaption": ""
             }
           ]

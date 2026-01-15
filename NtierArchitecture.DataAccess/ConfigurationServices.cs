@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NtierArchitecture.DataAccess.UnitOfWork.Abstract;
+
 
 namespace NtierArchitecture.DataAccess
 {
@@ -18,7 +20,7 @@ namespace NtierArchitecture.DataAccess
                 services.AddScoped<IUnitOfWork, UnitOfWork.Concrete.UnitOfWork>();
 
                 return services;
-            }   
+            }
         }
     }
 }

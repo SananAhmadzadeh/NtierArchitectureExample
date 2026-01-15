@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "ExampleWebAPI.Controllers.Auth.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "WebApiAdvanceExample.Entities.DTOs.AutDTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExampleWebAPI.Controllers.Auth.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "register",
+        "Type": "WebApiAdvanceExample.Entities.DTOs.AutDTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ExampleWebAPI.Controllers.CategoriesController",
     "Method": "AddCategory",
     "RelativePath": "api/Categories/AddCategory",
