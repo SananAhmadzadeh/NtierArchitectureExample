@@ -19,27 +19,45 @@ namespace ExampleWebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCategories()
         {
-            return Ok(await _service.GetAllCategoriesAsync());
+            var result = await _service.GetAllCategoriesAsync();
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCategoryById(Guid id)
         {
-            return Ok(await _service.GetCategoryByIdAsync(id));
+            var result = await _service.GetCategoryByIdAsync(id);
+
+            if (!result.Success)
+                return NotFound(result); 
+
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddCategory(CreateCategoryDto dto)
         {
-            await _service.AddCategoryAsync(dto);
-            return Ok();
+            var result = await _service.AddCategoryAsync(dto);
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            await _service.DeleteCategoryAsync(id);
-            return Ok();
+            var result = await _service.DeleteCategoryAsync(id);
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
     }
 }

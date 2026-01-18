@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Core.Utilities.Exceptions;
+using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using NtierArchitecture.Business.Services.Abstract;
 using NtierArchitecture.Business.Utilities.Constants;
 using NtierArchitecture.DataAccess.UnitOfWork.Abstract;
@@ -19,40 +21,56 @@ namespace NtierArchitecture.Business.Services.Concrete
             _unitOfWork = unitOfWork;
         }
 
-        public async Task AddCategoryAsync(CreateCategoryDto dto)
+        public async Task<IResult> AddCategoryAsync(CreateCategoryDto dto)
         {
             var result = _mapper.Map<Category>(dto);
             await _unitOfWork.CategoryRepository.AddAsync(result);
-            await _unitOfWork.SaveAsync();
+            var saveResult = await _unitOfWork.SaveAsync();
+            if (saveResult == 0)
+            {
+                return new ErrorResult("Category can't added!");
+            }
+            return new SuccessResult("Category added..");
         }
 
-        public async Task DeleteCategoryAsync(Guid id)
+        public async Task<IResult> DeleteCategoryAsync(Guid id)
         {
             var deletedCategory = await _unitOfWork.CategoryRepository.GetAsync(c => c.Id == id);
-            if(deletedCategory is null)
+            if (deletedCategory is null)
             {
                 throw new NotFoundException(ExceptionMessage.CategoryNotFound);
             }
             await _unitOfWork.CategoryRepository.DeleteAsync(deletedCategory);
-            await _unitOfWork.SaveAsync();
+            var saveResult = await _unitOfWork.SaveAsync();
+            if (saveResult == 0)
+            {
+                return new ErrorResult("Category can't deleted!");
+            }
+            return new SuccessResult("Category deleted..");
         }
 
-        public async Task<List<GetAllCategoriesDto>> GetAllCategoriesAsync()
+        public async Task<IDataResult<List<GetAllCategoriesDto>>> GetAllCategoriesAsync()
         {
             var categories = await _unitOfWork.CategoryRepository.GetAllAsync();
-            var result = _mapper.Map<List<GetAllCategoriesDto>>(categories);
-            return result;
+
+            if (categories.Count() == 0)
+            {
+                return new ErrorDataResult<List<GetAllCategoriesDto>>(_mapper.Map<List<GetAllCategoriesDto>>(categories), "Categories not found");
+            }
+
+            return new SuccessDataResult<List<GetAllCategoriesDto>>(_mapper.Map<List<GetAllCategoriesDto>>(categories), "Categories listed");
         }
 
-        public async Task<GetCategoryDto> GetCategoryByIdAsync(Guid id)
+        public async Task<IDataResult<GetCategoryDto>> GetCategoryByIdAsync(Guid id)
         {
             var category = await _unitOfWork.CategoryRepository.GetAsync(c => c.Id == id);
-            if(category is null)
+
+            if (category is null)
             {
-                throw new NotFoundException(ExceptionMessage.CategoryNotFound);
+                return new ErrorDataResult<GetCategoryDto>(_mapper.Map<GetCategoryDto>(category), "Category not found");
             }
-            var result = _mapper.Map<GetCategoryDto>(category);
-            return result;
+
+            return new SuccessDataResult<GetCategoryDto>(_mapper.Map<GetCategoryDto>(category), "Category listed");
         }
     }
 }

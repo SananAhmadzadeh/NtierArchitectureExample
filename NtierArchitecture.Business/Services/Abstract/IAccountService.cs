@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NtierArchitecture.Entities.DTOs.AutDTOs;
+﻿using NtierArchitecture.Entities.DTOs.AutDTOs;
 using WebApiAdvanceExample.Entities.DTOs.AutDTOs;
 
 namespace NtierArchitecture.Business.Services.Abstract

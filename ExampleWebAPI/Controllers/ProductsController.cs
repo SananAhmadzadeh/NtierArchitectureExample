@@ -17,27 +17,45 @@ namespace ExampleWebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(await _service.GetAllProductsAsync());
+            var result = await _service.GetAllProductsAsync();
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetProductById(Guid id)
         {
-            return Ok(await _service.GetProductByIdAsync(id));
+            var result = await _service.GetProductByIdAsync(id);
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddProduct(CreateProductDto dto)
         {
-            await _service.AddProductAsync(dto);
-            return Ok();
+            var result = await _service.AddProductAsync(dto);
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            await _service.DeleteProductAsync(id);
-            return Ok();
+            var result = await _service.DeleteProductAsync(id);
+
+            if (!result.Success)
+                return NotFound(result);
+
+            return Ok(result);
         }
     }
 }

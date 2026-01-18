@@ -6,6 +6,6 @@ namespace NtierArchitecture.DataAccess.UnitOfWork.Abstract
     {
         public ICategoryRepository CategoryRepository { get; }
         public IProductRepository ProductRepository { get; }
-        public Task SaveAsync();
+        public Task<int> SaveAsync();
     }
 }
