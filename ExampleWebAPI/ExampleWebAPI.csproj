@@ -26,4 +26,8 @@
     <ProjectReference Include="..\NtierArchitecture.DataAccess\NtierArchitecture.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\products\" />
+  </ItemGroup>
+
 </Project>

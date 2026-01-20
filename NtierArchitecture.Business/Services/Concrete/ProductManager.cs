@@ -15,22 +15,28 @@ namespace NtierArchitecture.Business.Services.Concrete
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public ProductManager(IMapper mapper, IUnitOfWork unitOfWork)
+        private readonly IFileService _fileService;
+        public ProductManager(IMapper mapper, IUnitOfWork unitOfWork, IFileService fileService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _fileService = fileService;
         }
 
         public async Task<IResult> AddProductAsync(CreateProductDto dto)
         {
+            string uploadedFilePath = await _fileService.UploadAsync(dto.ImageUrl, "products");
+
             var product = _mapper.Map<Product>(dto);
 
-            await _unitOfWork.ProductRepository.AddAsync(product);
+            product.ImagePath = uploadedFilePath;
 
+            await _unitOfWork.ProductRepository.AddAsync(product);
             var saveResult = await _unitOfWork.SaveAsync();
 
-            if(saveResult == 0)
+            if (saveResult == 0)
             {
+                _fileService.Delete(uploadedFilePath);
                 return new ErrorResult("Product can't added!");
             }
 
@@ -46,8 +52,9 @@ namespace NtierArchitecture.Business.Services.Concrete
                 throw new NotFoundException(ExceptionMessage.ProductNotFound);
             }
 
-            await _unitOfWork.ProductRepository.DeleteAsync(result);
+            _fileService.Delete(result.ImagePath);
 
+            await _unitOfWork.ProductRepository.DeleteAsync(result);
             var saveResult = await _unitOfWork.SaveAsync();
 
             if (saveResult == 0)

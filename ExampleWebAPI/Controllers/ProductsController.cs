@@ -41,7 +41,7 @@ namespace ExampleWebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(CreateProductDto dto)
+        public async Task<IActionResult> AddProduct([FromForm] CreateProductDto dto)
         {
             var result = await _service.AddProductAsync(dto);
 
@@ -52,7 +52,7 @@ namespace ExampleWebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(Guid id)
+        public async Task<IActionResult> DeleteProduct([FromForm] Guid id)
         {
             try
             {

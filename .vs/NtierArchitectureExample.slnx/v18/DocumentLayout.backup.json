@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\examplewebapi\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|solutionrelative:examplewebapi\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B16B888-6D35-F6B7-F0B3-56EB4FC7CA69}|NtierArchitecture.Business\\NtierArchitecture.Business.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\ntierarchitecture.business\\services\\concrete\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B16B888-6D35-F6B7-F0B3-56EB4FC7CA69}|NtierArchitecture.Business\\NtierArchitecture.Business.csproj|solutionrelative:ntierarchitecture.business\\services\\concrete\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductManager.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
+              "RelativeDocumentMoniker": "NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
+              "RelativeToolTip": "NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T18:45:43.272Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -31,19 +44,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
-              "RelativeDocumentMoniker": "ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
-              "RelativeToolTip": "ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T16:44:38.704Z",
-              "EditorCaption": ""
             }
           ]
         },
