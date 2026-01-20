@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core.Utilities.Exceptions;
+using Microsoft.AspNetCore.Mvc;
 using NtierArchitecture.Business.Services.Abstract;
+using System.Net;
 using WebApiAdvanceExample.Entities.DTOs.ProductDTOs;
 
 namespace ExampleWebAPI.Controllers
@@ -20,12 +22,14 @@ namespace ExampleWebAPI.Controllers
             var result = await _service.GetAllProductsAsync();
 
             if (!result.Success)
+            {
                 return NotFound(result);
+            }
 
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(Guid id)
         {
             var result = await _service.GetProductByIdAsync(id);
@@ -42,20 +46,27 @@ namespace ExampleWebAPI.Controllers
             var result = await _service.AddProductAsync(dto);
 
             if (!result.Success)
-                return NotFound(result);
+                return BadRequest(result);
 
-            return Ok(result);
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            var result = await _service.DeleteProductAsync(id);
+            try
+            {
+                var result = await _service.DeleteProductAsync(id);
 
-            if (!result.Success)
-                return NotFound(result);
+                if (!result.Success)
+                    return BadRequest(result);
 
-            return Ok(result);
+                return StatusCode((int)HttpStatusCode.NoContent, result);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
     }
 }

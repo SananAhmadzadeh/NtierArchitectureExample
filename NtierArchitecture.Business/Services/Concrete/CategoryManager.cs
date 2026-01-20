@@ -40,8 +40,11 @@ namespace NtierArchitecture.Business.Services.Concrete
             {
                 throw new NotFoundException(ExceptionMessage.CategoryNotFound);
             }
+
             await _unitOfWork.CategoryRepository.DeleteAsync(deletedCategory);
+
             var saveResult = await _unitOfWork.SaveAsync();
+
             if (saveResult == 0)
             {
                 return new ErrorResult("Category can't deleted!");

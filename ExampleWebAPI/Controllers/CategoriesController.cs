@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Core.Utilities.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NtierArchitecture.Business.Services.Abstract;
+using System.Net;
 using WebApiAdvanceExample.Entities.DTOs.CategoryDTOs;
 
 namespace ExampleWebAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "User")]
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _service;
@@ -27,13 +28,13 @@ namespace ExampleWebAPI.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(Guid id)
         {
             var result = await _service.GetCategoryByIdAsync(id);
 
             if (!result.Success)
-                return NotFound(result); 
+                return NotFound(result);
 
             return Ok(result);
         }
@@ -44,20 +45,27 @@ namespace ExampleWebAPI.Controllers
             var result = await _service.AddCategoryAsync(dto);
 
             if (!result.Success)
-                return NotFound(result);
+                return BadRequest(result);
 
-            return Ok(result);
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            var result = await _service.DeleteCategoryAsync(id);
+            try
+            {
+                var result = await _service.DeleteCategoryAsync(id);
 
-            if (!result.Success)
-                return NotFound(result);
+                if (!result.Success)
+                    return BadRequest(result);
 
-            return Ok(result);
+                return StatusCode((int)HttpStatusCode.NoContent, result);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new {Message = ex.Message});
+            }
         }
     }
 }

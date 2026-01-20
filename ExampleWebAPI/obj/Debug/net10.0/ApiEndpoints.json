@@ -17,8 +17,8 @@
   },
   {
     "ContainingType": "ExampleWebAPI.Controllers.Auth.AuthController",
-    "Method": "Register",
-    "RelativePath": "api/Auth/Register",
+    "Method": "RegisterUser",
+    "RelativePath": "api/Auth/RegisterUser/User Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -50,7 +50,7 @@
   {
     "ContainingType": "ExampleWebAPI.Controllers.CategoriesController",
     "Method": "DeleteCategory",
-    "RelativePath": "api/Categories/DeleteCategory",
+    "RelativePath": "api/Categories/DeleteCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -58,7 +58,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -76,7 +76,7 @@
   {
     "ContainingType": "ExampleWebAPI.Controllers.CategoriesController",
     "Method": "GetCategoryById",
-    "RelativePath": "api/Categories/GetCategoryById",
+    "RelativePath": "api/Categories/GetCategoryById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -84,7 +84,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -108,7 +108,7 @@
   {
     "ContainingType": "ExampleWebAPI.Controllers.ProductsController",
     "Method": "DeleteProduct",
-    "RelativePath": "api/Products/DeleteProduct",
+    "RelativePath": "api/Products/DeleteProduct/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -116,7 +116,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -134,7 +134,7 @@
   {
     "ContainingType": "ExampleWebAPI.Controllers.ProductsController",
     "Method": "GetProductById",
-    "RelativePath": "api/Products/GetProductById",
+    "RelativePath": "api/Products/GetProductById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -142,7 +142,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\examplewebapi\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F098218-C2AA-4214-EA31-E1129E55802D}|ExampleWebAPI\\ExampleWebAPI.csproj|solutionrelative:examplewebapi\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +27,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
+              "RelativeDocumentMoniker": "ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
+              "RelativeToolTip": "ExampleWebAPI\\Controllers\\Auth\\AuthController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T16:44:38.704Z",
+              "EditorCaption": ""
             }
           ]
         },

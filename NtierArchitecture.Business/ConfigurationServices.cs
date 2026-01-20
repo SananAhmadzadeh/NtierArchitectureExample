@@ -23,7 +23,7 @@ namespace NtierArchitecture.Business
 
                 services.AddScoped<IProductService, ProductManager>();
                 services.AddScoped<ICategoryService, CategoryManager>();
-                services.AddScoped<IAccountService, AccountManager>();
+                services.AddScoped<IAuthService, AuthManager>();
 
                 return services;
             }

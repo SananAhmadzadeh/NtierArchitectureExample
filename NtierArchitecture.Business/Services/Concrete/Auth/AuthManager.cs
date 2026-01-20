@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Core.Entities.Concrete.Auth;
-using Core.Utilities.Exceptions;
+using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using NtierArchitecture.Business.Services.Abstract;
-using NtierArchitecture.Business.Utilities.Constants;
 using NtierArchitecture.Entities.DTOs.AutDTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -15,14 +15,14 @@ using WebApiAdvanceExample.Entities.DTOs.AutDTOs;
 
 namespace NtierArchitecture.Business.Services.Concrete.Auth
 {
-    public class AccountManager : IAccountService
+    public class AuthManager : IAuthService
     {
         private readonly UserManager<AppUser<Guid>> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
         private readonly TokenOption? _tokenOption;
-        public AccountManager(UserManager<AppUser<Guid>> userManager, RoleManager<IdentityRole> roleManager, IMapper mapper, IConfiguration config)
+        public AuthManager(UserManager<AppUser<Guid>> userManager, RoleManager<IdentityRole> roleManager, IMapper mapper, IConfiguration config)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -31,7 +31,7 @@ namespace NtierArchitecture.Business.Services.Concrete.Auth
             _tokenOption = _config.GetSection("TokenOptions").Get<TokenOption>();
         }
 
-        public async Task RegisterAsync(RegisterDto register)
+        public async Task<IResult> RegisterUserAsync(RegisterDto register)
         {
             var user = _mapper.Map<AppUser<Guid>>(register);
 
@@ -39,7 +39,7 @@ namespace NtierArchitecture.Business.Services.Concrete.Auth
 
             if (!resultUser.Succeeded)
             {
-                throw new AccountCreationException(ExceptionMessage.AccountCreationError);
+                return new ErrorResult("Can not created this account!!!");
             }
 
             if (!await _roleManager.RoleExistsAsync("User"))
@@ -51,30 +51,31 @@ namespace NtierArchitecture.Business.Services.Concrete.Auth
 
             if (!resultRole.Succeeded)
             {
-                throw new AccountCreationException(ExceptionMessage.AddToRoleError);
+                return new ErrorResult(@"The role ""User"" can not added this user");
             }
 
+            return new SuccessResult("Account be created");
         }
 
-        public async Task<LoginResponseDto> LoginAsync(LoginDto login)
+        public async Task<IDataResult<LoginResponseDto>> LoginAsync(LoginDto login)
         {
             AppUser<Guid>? user = await _userManager.FindByNameAsync(login.UserName);
             if (user is null)
-                throw new UserNotFoundException(ExceptionMessage.UserNotFound);
+                return new ErrorDataResult<LoginResponseDto>("This user is not found");
 
             bool isValidPassword = await _userManager.CheckPasswordAsync(user, login.Password);
             if (!isValidPassword)
-                throw new UnauthorizedUserException(ExceptionMessage.PasswordWrong);
+                return new ErrorDataResult<LoginResponseDto>("Password wrong");
 
-            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenOption!.SecurityKey));
+            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenOption.SecurityKey));
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);
 
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-        new Claim(ClaimTypes.Name, user.UserName),
-        new Claim(ClaimTypes.Email, user.Email),
-    };
+                            {
+                                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                                new Claim(ClaimTypes.Name, user.UserName),
+                                new Claim(ClaimTypes.Email, user.Email),
+                            };
 
             var userRoles = await _userManager.GetRolesAsync(user);
             claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
@@ -89,15 +90,43 @@ namespace NtierArchitecture.Business.Services.Concrete.Auth
 
             string jwt = new JwtSecurityTokenHandler().WriteToken(token);
 
-            return new LoginResponseDto
+            return new SuccessDataResult<LoginResponseDto>(new LoginResponseDto
             {
                 Token = jwt,
                 Expiration = token.ValidTo,
                 UserName = user.UserName,
                 Email = user.Email,
                 Roles = userRoles
-            };
+            }, 
+            "Login success");
+
         }
 
+        public async Task<IResult> AddAdminAsync(RegisterDto register)
+        {
+            var admin = _mapper.Map<AppUser<Guid>>(register);
+
+            var resultAdmin = await _userManager.CreateAsync(admin, register.Password);
+
+            if (!resultAdmin.Succeeded)
+            {
+                return new ErrorResult("Can not created this account!!!");
+            }
+
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            }
+
+            var resultRole = await _userManager.AddToRoleAsync(admin, "Admin");
+
+            if (!resultRole.Succeeded)
+            {
+                return new ErrorResult(@"The role ""Admin"" can not added this admin");
+            }
+
+            return new SuccessResult("Account be created");
+
+        }
     }
 }

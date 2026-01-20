@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NtierArchitecture.Business.Services.Abstract;
 using WebApiAdvanceExample.Entities.DTOs.AutDTOs;
@@ -10,30 +9,45 @@ namespace ExampleWebAPI.Controllers.Auth
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAccountService _accountService;
+        private readonly IAuthService _accountService;
 
-        public AuthController(IAccountService accountService)
+        public AuthController(IAuthService accountService)
         {
             _accountService = accountService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterDto register)
+        [HttpPost("User Register")]
+        public async Task<IActionResult> RegisterUser(RegisterDto register)
         {
-            await _accountService.RegisterAsync(register);
+            var result = await _accountService.RegisterUserAsync(register);
 
-            return Ok(new
-            {
-                Message = "User registered successfully",
-                Code = StatusCodes.Status200OK
-            });
+            if(!result.Success)
+                return BadRequest(result);
+
+            return StatusCode(StatusCodes.Status201Created, result);
+        }
+
+        [ApiExplorerSettings(IgnoreApi = true)]
+        [Authorize(Roles = "SuperAdmin")]
+        [HttpPost("Add Admin")]
+        public async Task<IActionResult> AddAdmin(RegisterDto register)
+        {
+            var result = await _accountService.AddAdminAsync(register);
+
+            if (!result.Success)
+                return BadRequest(result);
+
+            return StatusCode(StatusCodes.Status201Created, result);
         }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto login)
         {
             var result = await _accountService.LoginAsync(login);
-            return Ok(result);
+            if(!result.Success)
+                return Unauthorized(result);
+
+            return Ok(result);  
         }
     }
 }

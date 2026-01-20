@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth/Register": {
+    "/api/Auth/RegisterUser/User Register": {
       "post": {
         "tags": [
           "Auth"
@@ -79,7 +79,7 @@
         }
       }
     },
-    "/api/Categories/GetCategoryById": {
+    "/api/Categories/GetCategoryById/{id}": {
       "get": {
         "tags": [
           "Categories"
@@ -87,7 +87,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -132,7 +133,7 @@
         }
       }
     },
-    "/api/Categories/DeleteCategory": {
+    "/api/Categories/DeleteCategory/{id}": {
       "delete": {
         "tags": [
           "Categories"
@@ -140,7 +141,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -166,7 +168,7 @@
         }
       }
     },
-    "/api/Products/GetProductById": {
+    "/api/Products/GetProductById/{id}": {
       "get": {
         "tags": [
           "Products"
@@ -174,7 +176,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -219,7 +222,7 @@
         }
       }
     },
-    "/api/Products/DeleteProduct": {
+    "/api/Products/DeleteProduct/{id}": {
       "delete": {
         "tags": [
           "Products"
@@ -227,7 +230,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
