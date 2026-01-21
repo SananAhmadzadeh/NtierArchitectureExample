@@ -90,6 +90,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "NtierArchitecture.WebAPI.Controllers.MailController",
+    "Method": "SendEmail",
+    "RelativePath": "api/Mail/send-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "NtierArchitecture.Entities.DTOs.ContactDTOs.EmailRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ExampleWebAPI.Controllers.ProductsController",
     "Method": "AddProduct",
     "RelativePath": "api/Products/AddProduct",

@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{4B16B888-6D35-F6B7-F0B3-56EB4FC7CA69}|NtierArchitecture.Business\\NtierArchitecture.Business.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\ntierarchitectureexample\\ntierarchitecture.business\\services\\concrete\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B16B888-6D35-F6B7-F0B3-56EB4FC7CA69}|NtierArchitecture.Business\\NtierArchitecture.Business.csproj|solutionrelative:ntierarchitecture.business\\services\\concrete\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,21 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductManager.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
-              "RelativeDocumentMoniker": "NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\NtierArchitectureExample\\NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
-              "RelativeToolTip": "NtierArchitecture.Business\\Services\\Concrete\\ProductManager.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T18:45:43.272Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"

@@ -1,12 +1,13 @@
 using Core.Entities.Concrete.Auth;
+using Core.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using NtierArchitecture.Business;
 using NtierArchitecture.DataAccess;
 using NtierArchitecture.DataAccess.EFCore;
 using WebApiAdvanceExample.Entities.Auth;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +39,8 @@ builder.Services.AddSwaggerGen(option =>
         }
     });
 });
+
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
 builder.Services.AddBusinessConfiguration();
 
@@ -71,6 +74,7 @@ builder.Services.AddAuthentication(opt =>
 
         };
     });
+
 
 builder.Services.AddAuthorization();
 

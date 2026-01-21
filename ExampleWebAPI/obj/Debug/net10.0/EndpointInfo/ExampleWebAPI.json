@@ -156,6 +156,37 @@
         }
       }
     },
+    "/api/Mail/send-email": {
+      "post": {
+        "tags": [
+          "Mail"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Products/GetAllProducts": {
       "get": {
         "tags": [
@@ -328,6 +359,24 @@
           },
           "status": {
             "$ref": "#/components/schemas/CategoryStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmailRequestDto": {
+        "type": "object",
+        "properties": {
+          "toEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
